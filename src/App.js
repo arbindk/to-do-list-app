@@ -18,20 +18,23 @@ function App() {
   return (
     <div className="app">
       <h1>Todo app</h1>
-      <form>
-        <input
-          value={inputText}
-          onChange={(event) => setInputText(event.target.value)}
-          type="text"
-        />
-        <button type="submit" onClick={adATodo} disabled={!inputText}>
-          ADD A TODO
-        </button>
-      </form>
-      {todos.map((todo) => (
-        //<h2>{todo}</h2>
-        <Todo text={todo} />
-      ))}
+      <div className="app__toDoBlock">
+        <form>
+          <input
+            value={inputText}
+            onChange={(event) => setInputText(event.target.value)}
+            type="text"
+          />
+          <br />
+          <button type="submit" onClick={adATodo} disabled={!inputText}>
+            ADD A TODO
+          </button>
+        </form>
+        {todos.map((todo) => (
+          //<h2>{todo}</h2>
+          <Todo text={todo} />
+        ))}
+      </div>
     </div>
   );
 }
